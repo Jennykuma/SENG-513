@@ -22,12 +22,17 @@ body {
 }
 
 .row {
-    padding-top: 15%;
-    width: 50%;
+    padding-top: 5%;
+    width: 60%;
     height: auto;
     display: flex;
     align-items: center;
     margin: 0 auto;
+}
+
+p, h1, h3, h4 {
+    margin: 0px;
+    padding: 0px;
 }
 
 h1 {
@@ -36,15 +41,26 @@ h1 {
     text-align: left;
 }
 
+.sub-header {
+    color: #ABCC57;
+    font-family: "Times New Roman";
+    font-style: italic;
+    text-align: left;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 20px;
+    padding-left: 0.5em;
+}
+
 p {
     color: darkgray;
     font-family: "Times New Roman";
     font-style: italic;
-}
-
-p, h1 {
-    margin: 0px;
-    padding: 0px;
 }
 
 img {
