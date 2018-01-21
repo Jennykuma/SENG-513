@@ -1,0 +1,54 @@
+.col-3 {width: 40%;}
+.col-9 {width: 60%;}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial;
+    height: 100%;
+    width: 100%;
+}
+
+.row {
+    padding-top: 15%;
+    width: 50%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #ABCC57;
+    font-size: 46px;
+    text-align: left;
+}
+
+p {
+    color: grey;
+    font-family: "Times New Roman";
+    font-style: italic;
+    opacity: 0.7;
+}
+
+p, h1 {
+    margin: 0px;
+    padding: 0px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}

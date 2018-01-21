@@ -1,0 +1,48 @@
+
+
+#sideNav {
+    position: absolute;
+    left: -210px;
+    transition: 0.5s;
+    padding: 15px;
+    width: 250px;
+
+    background-color: white;
+}
+
+#sideNav:hover{
+    left: 0; /* On mouse-over, make the menu links appear */
+}
+
+#sideNav:hover a{
+    color: #ABCC57;
+    font-family: Verdana;
+    font-size: small;
+    text-decoration: none;
+}
+
+#sideNav a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+#sideNav a:hover {
+    color: #8bcc00;
+    font-weight: bold;
+}
+
+#navText {
+    position: absolute;
+    transform:rotate(-90deg);
+    bottom: 50px;
+    right: -45px;
+
+    color: #ABCC57;
+    font-size: 24px;
+}
+
+li {
+    color: white;
+    padding-left:1em;
+}
