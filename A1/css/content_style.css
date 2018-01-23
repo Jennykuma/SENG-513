@@ -28,18 +28,25 @@
 body {
     font-family: Arial;
     height: 100%;
-    width: 100%;
+    width: 99%;
 }
 
-p, h1, h3, h4 {
+p, h1, h2, h3, h4 {
     margin: 0px;
     padding: 0px;
+    color: #ABCC57;
 }
 
 h1 {
     color: #ABCC57;
     font-size: 46px;
     text-align: left;
+}
+
+h2 {
+    color: #ABCC57;
+    font-size: 30px;
+    font-style: italic;
 }
 
 h3 {
