@@ -12,24 +12,87 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.55508214">
+    <splitter split-orientation="horizontal" split-proportion="0.39257455">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-          <file leaf-file-name="A1.iml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/A1.iml">
+          <file leaf-file-name="prickly_pear.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/prickly_pear.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+                <state relative-caret-position="814">
+                  <caret line="77" column="25" lean-forward="false" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="string_of_pearls.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="A1.iml" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/A1.iml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="119">
+                  <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="string_of_pearls.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/string_of_pearls.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="816">
-                  <caret line="54" column="35" lean-forward="true" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+                <state relative-caret-position="661">
+                  <caret line="67" column="21" lean-forward="false" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="gallery.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/gallery.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="573">
+                  <caret line="79" column="25" lean-forward="false" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
+                  <folding>
+                    <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="e#630#638#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="680">
+                  <caret line="40" column="25" lean-forward="false" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="references.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/references.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="799">
+                  <caret line="47" column="16" lean-forward="false" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/about.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="794">
+                  <caret line="64" column="25" lean-forward="false" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="california_sunset.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/california_sunset.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="867">
+                  <caret line="75" column="25" lean-forward="false" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
@@ -38,32 +101,32 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-          <file leaf-file-name="prickly_pear.html" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/prickly_pear.html">
+        <leaf>
+          <file leaf-file-name="gallery_style.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/gallery_style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="10" selection-end-column="72" />
+                <state relative-caret-position="17">
+                  <caret line="1" column="6" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="content_style.css" pinned="false" current-in-tab="false">
+          <file leaf-file-name="content_style.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/css/content_style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="51" column="4" lean-forward="true" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+                <state relative-caret-position="862">
+                  <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="home_style.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/css/home_style.css">
+          <file leaf-file-name="nav_style.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/nav_style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+                <state relative-caret-position="629">
+                  <caret line="37" column="13" lean-forward="true" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -76,8 +139,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -91,15 +154,19 @@
       <list>
         <option value="$PROJECT_DIR$/.idea/index.html" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/css/nav_style.css" />
         <option value="$PROJECT_DIR$/css/home_style.css" />
         <option value="$PROJECT_DIR$/golden_barrel.html" />
-        <option value="$PROJECT_DIR$/css/content_style.css" />
-        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/map.html" />
+        <option value="$PROJECT_DIR$/css/nav_style.css" />
         <option value="$PROJECT_DIR$/about.html" />
-        <option value="$PROJECT_DIR$/prickly_pear.html" />
         <option value="$PROJECT_DIR$/california_sunset.html" />
+        <option value="$PROJECT_DIR$/css/gallery_style.css" />
+        <option value="$PROJECT_DIR$/gallery.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/prickly_pear.html" />
         <option value="$PROJECT_DIR$/string_of_pearls.html" />
+        <option value="$PROJECT_DIR$/references.html" />
+        <option value="$PROJECT_DIR$/css/content_style.css" />
       </list>
     </option>
   </component>
@@ -132,6 +199,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -175,7 +243,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -616,11 +683,12 @@
       <workItem from="1516645015196" duration="1330000" />
       <workItem from="1516648273259" duration="4944000" />
       <workItem from="1516673342351" duration="10808000" />
+      <workItem from="1516733174836" duration="13786000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46316000" />
+    <option name="totallyTimeSpent" value="60102000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -671,6 +739,46 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/A1.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/string_of_pearls.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="54" column="35" lean-forward="true" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prickly_pear.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/content_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" column="4" lean-forward="true" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/home_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/A1.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -835,10 +943,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/nav_style.css">
+    <entry file="file://$PROJECT_DIR$/A1.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="1" lean-forward="true" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
+        <state relative-caret-position="119">
+          <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -846,63 +954,90 @@
     <entry file="file://$PROJECT_DIR$/css/home_style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+          <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/css/nav_style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="12" lean-forward="false" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+        <state relative-caret-position="629">
+          <caret line="37" column="13" lean-forward="true" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="38" column="16" lean-forward="true" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/content_style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="51" column="4" lean-forward="true" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+        <state relative-caret-position="794">
+          <caret line="64" column="25" lean-forward="false" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/california_sunset.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="74" selection-end-column="14" />
+        <state relative-caret-position="867">
+          <caret line="75" column="25" lean-forward="false" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/A1.iml">
+    <entry file="file://$PROJECT_DIR$/css/gallery_style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+        <state relative-caret-position="17">
+          <caret line="1" column="6" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gallery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="79" column="25" lean-forward="false" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#630#638#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="25" lean-forward="false" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/prickly_pear.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="10" selection-end-column="72" />
+        <state relative-caret-position="814">
+          <caret line="77" column="25" lean-forward="false" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/string_of_pearls.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="54" column="35" lean-forward="true" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+        <state relative-caret-position="661">
+          <caret line="67" column="21" lean-forward="false" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/references.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="47" column="16" lean-forward="false" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/content_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="862">
+          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
           <folding />
         </state>
       </provider>

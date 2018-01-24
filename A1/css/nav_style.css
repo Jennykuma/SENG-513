@@ -31,9 +31,10 @@
 }
 
 #navText {
+    font-family: Arial;
     position: absolute;
     transform:rotate(-90deg);
-    bottom: 50px;
+    bottom: 80px;
     right: -45px;
 
     color: #ABCC57;
@@ -43,4 +44,21 @@
 #sideNav li {
     color: white;
     padding-left:1em;
+}
+
+#favouritesTitle {
+    color: white;
+}
+
+#sideNav:hover > #favouritesTitle {
+    color: darkgray;
+}
+
+#favouritesTitle {
+    margin: 0px;
+    padding: 0px;
+
+    color: darkgray;
+    font-family: "Times New Roman";
+    font-style: italic;
 }
