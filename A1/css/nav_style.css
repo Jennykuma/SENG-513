@@ -1,7 +1,7 @@
 #sideNav {
     position: absolute;
-    left: -210px;
-    transition: 0.5s;
+    left: -210px;               /* move nav to the left, off screen */
+    transition: 0.5s;           /* transition time */
     padding: 15px;
     width: 250px;
 
@@ -9,7 +9,7 @@
 }
 
 #sideNav:hover{
-    left: 0; /* On mouse-over, make the menu links appear */
+    left: 0;                    /* hover, make the menu links appear */
 }
 
 #sideNav:hover a{
@@ -22,18 +22,18 @@
 #sideNav a {
     color: white;
     font-size: 16px;
-    text-decoration: none;
+    text-decoration: none;      /* remove the underline from links */
 }
 
 #sideNav a:hover {
     color: #8bcc00;
-    font-weight: bold;
+    font-weight: bold;          /* hover, make link bold */
 }
 
 #navText {
     font-family: Arial;
     position: absolute;
-    transform:rotate(-90deg);
+    transform:rotate(-90deg);   /* rotate navigation name */
     bottom: 80px;
     right: -45px;
 
@@ -42,7 +42,7 @@
 }
 
 #sideNav li {
-    color: white;
+    color: white;               /* make bullet white (invisible in this case) */
     padding-left:1em;
 }
 
@@ -51,14 +51,14 @@
 }
 
 #sideNav:hover > #favouritesTitle {
-    color: darkgray;
+    color: darkgray;            /* hover on sideNav, 'my favourites' will turn darkgray */
 }
 
 #favouritesTitle {
     margin: 0px;
     padding: 0px;
 
-    color: darkgray;
+    color: white;               /* 'my favourites' is white until sidenav hovered on */
     font-family: "Times New Roman";
     font-style: italic;
 }

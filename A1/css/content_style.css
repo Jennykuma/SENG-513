@@ -1,21 +1,3 @@
-.col-4 {width: 40%;}
-.col-6 {width: 60%;}
-.col-10 {width: 100%;}
-
-.row {
-    padding-top: 4%;
-    width: 60%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-}
-
-[class*="col-"] {
-    float: left;
-    padding: 15px;
-}
-
 * {
     box-sizing: border-box;
 }
@@ -27,7 +9,25 @@ body {
     width: 99%;
 }
 
-p, h1, h2, h3, h4 {
+.col-4 {width: 40%;}    /* set width for class col 4 */
+.col-6 {width: 60%;}    /* set width for class col 6 */
+.col-10 {width: 100%;}  /* set width for class col 10 */
+
+[class*="col-"] {       /* for all classes with col-, float left & padding 10 px */
+    float: left;
+    padding: 15px;
+}
+
+.row {
+    padding-top: 4%;    /* center vertically for now */
+    width: 60%;         /* take up 60% of the full page width */
+    height: auto;
+    display: flex;      /* flex!! */
+    align-items: center;
+    margin: 0 auto;
+}
+
+p, h1, h2, h3, h4 {     /* margins & padding of all p, h1, h2, h3, h4 */
     margin: 0px;
     padding: 0px;
     color: #ABCC57;
@@ -35,22 +35,22 @@ p, h1, h2, h3, h4 {
 
 h1 {
     color: #ABCC57;
-    font-size: 46px;
+    font-size: 46px;    /* font size 46 */
     text-align: left;
 }
 
 h2 {
     color: #ABCC57;
-    font-size: 30px;
-    font-style: italic;
+    font-size: 30px;     /* font size 30 */
+    font-style: italic;  /* italicize */
 }
 
 h3 {
-    font-size: 24px;
+    font-size: 24px;     /* font size 24 */
 }
 
 h4 {
-    font-size: 20px;
+    font-size: 20px;     /* font size 20 */
     padding-left: 0.5em;
 }
 
@@ -75,28 +75,28 @@ img {
 table {
     font-family: "Times New Roman";
     color: darkgray;
-    border-collapse: collapse;
+    border-collapse: collapse;      /* style table */
     width: 100%;
     margin-top: 20px;
 }
 
 td, th {
-    border: 0.5px solid #ABCC57;
+    border: 0.5px solid #ABCC57;    /* change colour of table border */
     text-align: left;
     padding: 8px;
 }
 
 th {
     color: #ABCC57;
-    font-style: italic;
+    font-style: italic;             /* table header italicize */
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none;          /* remove underline of links */
     color: darkgray;
     font-family: "Times New Roman";
 }
 
 a:hover {
-    color: gray;
+    color: gray;                    /* hover, links will be gray instead of darkgray */
 }

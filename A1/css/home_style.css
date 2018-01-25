@@ -1,33 +1,35 @@
-.col-3 {width: 40%;}
-.col-9 {width: 60%;}
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-[class*="col-"] {
-    float: left;
-    padding: 15px;
-}
-
 * {
     box-sizing: border-box;
 }
 
 
 body {
-    font-family: Arial;
-    height: 100%;
-    width: 99%;
+    font-family: Arial; /* default font */
+    height: 100%;       /* full height */
+    width: 99%;         /* make width 99% or else there's a scroll bar */
+}
+
+
+.col-4 {width: 35%;} /* set width for class col 4 */
+.col-6 {width: 65%;} /* set width for class col 6 */
+
+[class*="col-"] {    /* for all classes with col-, float left & padding 10 px */
+    float: left;
+    padding: 10px;
 }
 
 .row {
-    padding-top: 15%;
-    width: 50%;
+    padding-top: 15%;   /* center vertically for now */
+    width: 50%;         /* take up 50% of the full page width */
     height: auto;
-    display: flex;
+    display: flex;      /* flex!! */
     align-items: center;
     margin: 0 auto;
+}
+
+p, h1 {
+    margin: 0px;        /* margins & padding of all p & h1's is 0 */
+    padding: 0px;
 }
 
 h1 {
@@ -42,12 +44,18 @@ p {
     font-style: italic;
 }
 
-p, h1 {
-    margin: 0px;
-    padding: 0px;
-}
-
 img {
     width: 100%;
     height: auto;
+}
+
+a {
+    text-decoration: none;          /* remove underline of links */
+    color: darkgray;
+    font-family: "Times New Roman";
+    font-style: italic;
+}
+
+a:hover {
+    color: gray;                    /* hover, links will be gray instead of darkgray */
 }
