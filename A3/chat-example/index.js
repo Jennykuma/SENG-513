@@ -1,6 +1,6 @@
 // Express initializes app to be a function handler that you can supply to an HTTP server (as seen in line 3).
-var app = require('express')();
-var http = require('http').Server(app);
+var app = require('express')(); // express is a library
+var http = require('http').Server(app); // http is a library
 
 // We define a route handler / that gets called when we hit our website home.
 app.get('/', function(req, res){
