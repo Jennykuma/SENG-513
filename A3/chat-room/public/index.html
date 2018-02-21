@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Socket.IO chat</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="client.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="chat-container">
+            <ul id="chat-messages"></ul>
+            harro
+        </div>
+
+
+        <div class="user-container">
+            <h1>Users List: </h1>
+            harro
+        </div>
+
+    </div>
+
+    <form action="" >
+        <input id="user-msg" autocomplete="off" />
+        <button onclick="msg_sent()">Send</button>>
+    </form>
+
+    <!--
+    <script>
+        $(function () {
+            let socket = io();
+            let time = new Date();
+            let timeString = time.toLocaleTimeString(navigator.language, {hour: '2-digit', minute: '2-digit'}).toString();
+            console.log(time);
+            $('form').submit(function() {
+                socket.emit('chat message', $('#user-msg').val()); // when a user types a message, server gets chat msg event
+                $('#user-msg').val('');
+                return false;
+            });
+            socket.on('chat message', function(msg){
+                $('#chat-messages').append($('<li>').text(timeString + " " + msg)); // include the msg on the page
+            });
+        });
+    </script>-->
+
+</body>
+</html>

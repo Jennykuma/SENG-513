@@ -1,0 +1,11 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font: 13px Helvetica, Arial; }
+form { background: rgba(0, 0, 0, 0.08); padding: 3px; position: fixed; bottom: 0; width: 100%; }
+form input { border: 0; padding: 10px; width: 88%; margin-right: .5%; }
+form button { width: 10%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+#chat-messages { list-style-type: none; margin: 0; padding: 0; }
+#chat-messages li { padding: 5px 10px; }
+#chat-messages li:nth-child(odd) { background: #eee; }
+.container { display: flex; height: 90%; flex-flow: row; }
+.chat-container { border: rgba(0,0,0,1.0); width: 100%; overflow-y: auto; padding: 10px; }
+.user-container { border: rgba(0,0,0,1.0); width: 35%; overflow-y: auto; padding: 10px; }
