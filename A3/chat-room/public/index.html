@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,32 +7,26 @@
     <title>Socket.IO chat</title>
 
     <link rel="stylesheet" type="text/css" href="styles.css">
-
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script type="text/javascript" src="client.js"></script>
 </head>
 <body>
 
     <div class="container">
-
         <div class="chat-container">
+            <h1> Chat Log: </h1>
             <ul id="chat-messages"></ul>
-            harro
         </div>
 
+        <div class="divider"></div>
 
         <div class="user-container">
             <h1> Users List: </h1>
-            harro
+            <ul style="list-style: none;" id="user-list"></ul>
         </div>
-
     </div>
 
-    <form action="" >
+    <form action="" id="chat-box">
         <input id="user-msg" autocomplete="off" />
-        <button onclick="msg_sent()">Send</button>>
+        <button> Send </button>
     </form>
 
     <!--
@@ -52,6 +46,11 @@
             });
         });
     </script>-->
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="client.js"></script>
 
 </body>
 </html>
