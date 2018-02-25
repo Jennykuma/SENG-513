@@ -26,13 +26,26 @@ io.on('connection', function(socket){
         let nickname = "User " + usersOnline;
         socket.name = nickname;
         usersList.push({nickname: nickname});
+        socket.emit('announce', nickname);
+        socket.broadcast.emit('announce', nickname);
         socket.emit('new user', nickname);
-        console.log('usersList: ' + usersList);
+        console.log('old usersList: ' + usersList);
+        io.emit('new userlist', usersList);
     });
 
     // User disconnects
     socket.on('disconnect', function(){
         console.log('a user disconnected');
+        let oldUsername = socket.name;
+        socket.broadcast.emit('delete user', oldUsername);
+        socket.emit('delete user', oldUsername);
+        for(let i = 0; i < usersList.length; i++){
+            if(usersList[i].nickname === socket.name){
+                usersList.splice(i, 1);
+            }
+        }
+        console.log('new usersList: ' + usersList);
+        io.emit('new userlist', usersList);
     });
 
     // Chat message sent
@@ -43,11 +56,11 @@ io.on('connection', function(socket){
     socket.on('chat message', function(msg){
         timeStamp = new Date();
         let hour = timeStamp.getHours();
-        let min = timeStamp.getMinutes();
+        let min = (timeStamp.getMinutes()<10 ? '0' : '') + timeStamp.getMinutes();
         timing = hour + " : " + min;
 
-        socket.broadcast.emit('chat message', timing, msg);
-        socket.emit('chat message', timing, msg);
+        socket.broadcast.emit('chat message', timing, socket.name, msg);
+        socket.emit('bold chat message', timing, socket.name, msg);
 
         //io.emit('chat message', msg); // send msg to everyone on the server
     });

@@ -1,3 +1,19 @@
+*, *:before, *:after
+{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -18,8 +34,16 @@ form {
     width: 100%;
 }
 
+h1 {
+    color: #fff6f3;
+}
+
+.header {
+    margin-left: 20px;
+}
+
 #chat-box input {
-    border: 0;
+    border: 1px solid #93827F;
     margin-right: .5%;
     padding: 15px;
     width: 88%;
@@ -46,32 +70,43 @@ form {
     padding: 5px 10px;
 }
 
+/*
 #chat-messages li:nth-child(odd) {
     background: #eee;
-}
+}*/
 
 .container {
     display: flex;
-    height: 95%;
+    height: 83%;
     flex-flow: row;
 }
 
-.container h1 {
-    color: #fff6f3;
+.chat-container {
+    position: relative;
+    height: 100%;
+    /* border: 1px solid rgba(0,0,0,1.0); */
+    width: 95%;
+    padding: 0;
+    overflow-y: auto;
 }
 
-.chat-container {
-    border: rgba(0,0,0,1.0);
-    width: 95%;
-    overflow-y: auto;
-    padding: 10px;
+.chat-msg-holder {
+    /*position: absolute;*/
+    position: relative;
+    width: 98%;
+    /* border: 1px solid rgba(0,0,0,1.0); */
+    background-color: floralwhite;
+    flex: 1; /* same as flex: 1 1 auto; */
+    /* Needed for when the area gets squished too far and there is content that can't be displayed */
+    overflow: auto;
+    margin-left: 10px;
 }
 
 .divider {
     position:absolute;
     right: 27%;
-    top: 10%;
-    bottom: 10%;
+    top: 1%;
+    bottom: 5%;
     border-left:1px solid rgba(255,255,255,0.8);
 }
 
@@ -79,10 +114,19 @@ form {
     width: 35%;
     overflow-y: auto;
     padding: 10px;
+    margin-top: -75px;
 }
 
 #user-list {
     margin: 5px;
     padding: 5px;
     background: #F9F0ED;
+}
+
+#footer {
+    padding: 8px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
