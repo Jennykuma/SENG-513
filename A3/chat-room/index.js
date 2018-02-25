@@ -23,7 +23,8 @@ io.on('connection', function(socket){
 
     socket.on('new user', function() {
         usersOnline++;
-        let color = '#000000';
+        let color = getRandomColor();
+        console.log("starting color is: " + color);
         let nickname = "User" + usersOnline;
         socket.color = color;
         socket.name = nickname;
@@ -72,6 +73,7 @@ io.on('connection', function(socket){
 
             if (taken) {
                 socket.emit('nickname taken', socket.name);
+                socket.name = oldUsername;
                 console.log("Name taken sry");
             } else {
                 console.log("Name set successful");
@@ -93,6 +95,7 @@ io.on('connection', function(socket){
             }
             console.log("color changed");
             io.emit('new userlist', usersList);
+            socket.emit('color set', socket.color);
         } else {
             socket.broadcast.emit('chat message', timing, socket.color, socket.name, msg);
             socket.emit('bold chat message', timing, socket.color, socket.name, msg);
@@ -101,6 +104,17 @@ io.on('connection', function(socket){
         //io.emit('chat message', msg); // send msg to everyone on the server
     });
 });
+
+// Random color generator from:
+// https://stackoverflow.com/questions/1484506/random-color-generator
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
 
 // We make the http server listen on port 3000.
 http.listen(3000, function(){

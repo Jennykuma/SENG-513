@@ -28,7 +28,7 @@ function onLoad() {
     socket.on('new userlist', function (usersList) {
         $('#user-list').text("");
         for (let i = 0; i < usersList.length; i++) {
-            $('#user-list').append($('<li>').html('<span style="color: ' + usersList[i].color + '">'
+            $('#user-list').append($('<li>').html('<span style="color:#' + usersList[i].color + '">'
             + usersList[i].nickname + '</span>'));
         }
     });
@@ -49,6 +49,10 @@ function onLoad() {
     socket.on('bold chat message', function (timing, color, username, msg) {
         $('#chat-messages').append($('<li>').html(timing + " - " + '<b><span style="color:' + color +
             '">' + username + ': </span>' + msg + '</b>'));
+    });
+
+    socket.on('color set', function (color) {
+        $('#chat-messages').append($('<li>').html('<i>' + "Nickname color has been set to: " + color + '</i>'));
     });
 
     socket.on('nickname set', function (newNick) {
