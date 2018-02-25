@@ -23,13 +23,14 @@ io.on('connection', function(socket){
 
     socket.on('new user', function() {
         usersOnline++;
-        let nickname = "User " + usersOnline;
+        let color = '#000000';
+        let nickname = "User" + usersOnline;
+        socket.color = color;
         socket.name = nickname;
-        usersList.push({nickname: nickname});
+        usersList.push({nickname: nickname, color: color});
         socket.emit('announce', nickname);
         socket.broadcast.emit('announce', nickname);
         socket.emit('new user', nickname);
-        console.log('old usersList: ' + usersList);
         io.emit('new userlist', usersList);
     });
 
@@ -59,8 +60,43 @@ io.on('connection', function(socket){
         let min = (timeStamp.getMinutes()<10 ? '0' : '') + timeStamp.getMinutes();
         timing = hour + " : " + min;
 
-        socket.broadcast.emit('chat message', timing, socket.name, msg);
-        socket.emit('bold chat message', timing, socket.name, msg);
+        if(msg.startsWith("/nick ")) {
+            let oldUsername = socket.name;
+            let taken = false;
+            socket.name = msg.slice(6);
+            for (let i = 0; i < usersList.length; i++) {
+                if (usersList[i].nickname === socket.name) {
+                    taken = true;
+                }
+            }
+
+            if (taken) {
+                socket.emit('nickname taken', socket.name);
+                console.log("Name taken sry");
+            } else {
+                console.log("Name set successful");
+                for (let i = 0; i < usersList.length; i++) {
+                    if (usersList[i].nickname === oldUsername) {
+                        usersList[i].nickname = socket.name;
+                    }
+                }
+                io.emit('new userlist', usersList);
+                socket.broadcast.emit('nickname set other', oldUsername, socket.name);
+                socket.emit('nickname set', socket.name);
+            }
+        } else if (msg.startsWith("/nickcolor ")) {
+            socket.color = msg.slice(11);
+            for(let i = 0; i < usersList.length; i++) {
+                if(usersList[i].nickname === socket.name) {
+                    usersList[i].color = socket.color;
+                }
+            }
+            console.log("color changed");
+            io.emit('new userlist', usersList);
+        } else {
+            socket.broadcast.emit('chat message', timing, socket.color, socket.name, msg);
+            socket.emit('bold chat message', timing, socket.color, socket.name, msg);
+        }
 
         //io.emit('chat message', msg); // send msg to everyone on the server
     });
