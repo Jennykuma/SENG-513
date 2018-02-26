@@ -7,6 +7,7 @@ let io = require('socket.io')(http); // new instance of io by passing http (http
 let path = require("path");
 
 let timeStamp;
+let chatLog = [];
 let usersOnline = 0;
 let usersList = [];
 
@@ -21,19 +22,44 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
     console.log('a user connected');
 
+    /*
+    usersOnline++;
+    let color = getRandomColor();
+    let nickname = "User" + usersOnline;
+    socket.color = color;
+    socket.name = nickname;
+
+    socket.emit('user cookie', socket.name);
+
+    usersList.push({nickname: nickname, color: color});
+    socket.emit('announce', nickname);
+    socket.broadcast.emit('announce', nickname);
+    socket.emit('new user', nickname);
+    io.emit('new userlist', usersList);
+
+    socket.on('cookie user', function(nickname) {
+        usersList.splice(usersList.indexOf(socket.name), 1);
+        socket.name = nickname;
+        usersList.push({nickname: socket.name, color: socket.color});
+        socket.emit('new user', nickname);
+        io.emit('new userlist', usersList);
+    });
+    */
+
     socket.on('new user', function() {
         usersOnline++;
         let color = getRandomColor();
-        console.log("starting color is: " + color);
         let nickname = "User" + usersOnline;
         socket.color = color;
         socket.name = nickname;
         usersList.push({nickname: nickname, color: color});
+        socket.emit('new user', nickname);
+        socket.emit('chat history', chatLog);
         socket.emit('announce', nickname);
         socket.broadcast.emit('announce', nickname);
-        socket.emit('new user', nickname);
         io.emit('new userlist', usersList);
     });
+
 
     // User disconnects
     socket.on('disconnect', function(){
@@ -74,7 +100,7 @@ io.on('connection', function(socket){
             if (taken) {
                 socket.emit('nickname taken', socket.name);
                 socket.name = oldUsername;
-                console.log("Name taken sry");
+                console.log("Name taken");
             } else {
                 console.log("Name set successful");
                 for (let i = 0; i < usersList.length; i++) {
@@ -84,6 +110,7 @@ io.on('connection', function(socket){
                 }
                 io.emit('new userlist', usersList);
                 socket.broadcast.emit('nickname set other', oldUsername, socket.name);
+                /*socket.emit('nickname cookie', socket.name);*/
                 socket.emit('nickname set', socket.name);
             }
         } else if (msg.startsWith("/nickcolor ")) {
@@ -99,6 +126,12 @@ io.on('connection', function(socket){
         } else {
             socket.broadcast.emit('chat message', timing, socket.color, socket.name, msg);
             socket.emit('bold chat message', timing, socket.color, socket.name, msg);
+
+            if(chatLog.length >= 200){
+                chatLog.shift();
+            } else {
+                chatLog.push({user: socket.name, color: socket.color, msg: msg});
+            }
         }
 
         //io.emit('chat message', msg); // send msg to everyone on the server
@@ -109,7 +142,7 @@ io.on('connection', function(socket){
 // https://stackoverflow.com/questions/1484506/random-color-generator
 function getRandomColor() {
     var letters = '0123456789ABCDEF';
-    var color = '#';
+    var color = '';
     for (var i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
     }

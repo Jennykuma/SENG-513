@@ -1,20 +1,40 @@
 /**
  * Created by Jennykuma on 2018-02-20.
  */
-let socket;
-let username;
 
 $(document).ready(onLoad());
 
 function onLoad() {
     console.log("hello");
-    socket = io();
+    let socket = io();
+
+    /*
+    // document.cookie = the user's username
+    socket.on('user cookie', function(username) {
+        if(document.cookie) {
+            socket.emit('cookie user', document.cookie);
+            socket.name = document.cookie;
+            console.log("cookie exists");
+        } else {
+            socket.name = username;
+            document.cookie = socket.name;
+            console.log("cookie created");
+        }
+    });
+
+    socket.on('nickname cookie', function(username) {
+       if(document.cookie){
+           document.cookie = username;
+       }
+    });
+    */
 
     $('form').submit(function () {
         socket.emit('chat message', $('#user-msg').val());
         $('#user-msg').val('');
         return false;
     });
+
 
     socket.on('connect', function () {
         socket.emit('new user');
@@ -33,6 +53,13 @@ function onLoad() {
         }
     });
 
+    socket.on('chat history', function(chatLog) {
+       for (let i = 0; i < chatLog.length; i++) {
+           $('#chat-messages').append($('<li>').html('<span style="color:#' + chatLog[i].color + '">'
+           + chatLog[i].user + ': </span>' + chatLog[i].msg));
+       }
+    });
+
     socket.on('announce', function (username) {
         $('#chat-messages').append($('<li>').text(username + " has connected"));
     });
@@ -42,17 +69,17 @@ function onLoad() {
     });
 
     socket.on('chat message', function (timing, color, username, msg) {
-        $('#chat-messages').append($('<li>').html(timing + " - " + '<span style="color:' + color + '">'
+        $('#chat-messages').append($('<li>').html(timing + " - " + '<span style="color:#' + color + '">'
             + username + ': </span>' + msg));
     });
 
     socket.on('bold chat message', function (timing, color, username, msg) {
-        $('#chat-messages').append($('<li>').html(timing + " - " + '<b><span style="color:' + color +
+        $('#chat-messages').append($('<li>').html(timing + " - " + '<b><span style="color:#' + color +
             '">' + username + ': </span>' + msg + '</b>'));
     });
 
     socket.on('color set', function (color) {
-        $('#chat-messages').append($('<li>').html('<i>' + "Nickname color has been set to: " + color + '</i>'));
+        $('#chat-messages').append($('<li>').html('<i>' + "Nickname color has been set to: #" + color + '</i>'));
     });
 
     socket.on('nickname set', function (newNick) {
