@@ -1,12 +1,14 @@
 /**
  * Created by Jennykuma on 2018-02-20.
  */
+let socket;
+let username;
 
 $(document).ready(onLoad());
 
 function onLoad() {
     console.log("hello");
-    let socket = io();
+    socket = io();
 
     $('form').submit(function () {
         socket.emit('chat message', $('#user-msg').val());
@@ -14,43 +16,40 @@ function onLoad() {
         return false;
     });
 
-    socket.on('new user xD', function(username){
-        if(document.cookie){
-            socket.emit('new cookie', document.cookie)
-            $('#user-name').text("* You are " + document.cookie);
-            $('#user-list').append($('<li>').text(document.cookie));
-        }else{
-            socket.emit('new user')
-        }
-    });
-
-    socket.on('new user cookie', function(username){
-        document.cookie = username;
-        $('#user-name').text("* You are " + username);
-        $('#user-list').append($('<li>').text(username));
-    });
-
+    /*socket.on('connect', function () {
+        socket.emit('new user');
+    });*/
+	
+	socket.on('new user xD', function(username){
+		if(document.cookie){
+			socket.emit('new cookie', document.cookie);
+			$('#user-name').text("* You are " + document.cookie);
+			$('#user-list').append($('<li>').text(document.cookie));
+		}else{
+			socket.emit('new user');
+		}
+	})
+	
+	socket.on('new user cookie', function(username){
+		document.cookie = username
+		$('#user-name').text("* You are " + username);
+		$('#user-list').append($('<li>').text(username));
+    })
+    
     socket.on('new name', function(username){
         $('#user-name').text("* You are " + username);
-        $('#user-list').append($('<li>').text(username));
     })
+	
+	socket.on('new cookie name', function(newName, color){
+		if(document.cookie){
+			document.cookie = newName
+		}
+	})
 
-    socket.on('new cookie name', function(newName, color){
-        if(document.cookie){
-            document.cookie = newName;
-            document.cookie = color;
-        }
-    });
-
-
-    socket.on('connect', function () {
-        socket.emit('new user');
-    });
-
-    socket.on('new user', function (username) {
+    /*socket.on('new user', function (username) {
         $('#user-name').text("* You are " + username);
         $('#user-list').append($('<li>').text(username));
-    });
+    });*/
 
     socket.on('new userlist', function (usersList) {
         $('#user-list').text("");
@@ -61,11 +60,11 @@ function onLoad() {
     });
 
     socket.on('chat history', function(chatLog) {
-       for (let i = 0; i < chatLog.length; i++) {
-           $('#chat-messages').append($('<li>').html('<span style="color:#' + chatLog[i].color + '">'
-           + chatLog[i].user + ': </span>' + chatLog[i].msg));
-       }
-    });
+        for (let i = 0; i < chatLog.length; i++) {
+            $('#chat-messages').append($('<li>').html('<span style="color:#' + chatLog[i].color + '">'
+            + chatLog[i].user + ': </span>' + chatLog[i].msg));
+        }
+     });
 
     socket.on('announce', function (username) {
         $('#chat-messages').append($('<li>').text(username + " has connected"));
@@ -76,7 +75,7 @@ function onLoad() {
     });
 
     socket.on('chat message', function (timing, color, username, msg) {
-        $('#chat-messages').append($('<li>').html(timing + " - " + '<span style="color:#' + color + '">'
+        $('#chat-messages').append($('<li>').html(timing + " - " + '<span style="color:' + color + '">'
             + username + ': </span>' + msg));
     });
 
@@ -86,7 +85,7 @@ function onLoad() {
     });
 
     socket.on('color set', function (color) {
-        $('#chat-messages').append($('<li>').html('<i>' + "Nickname color has been set to: #" + color + '</i>'));
+        $('#chat-messages').append($('<li>').html('<i>' + "Nickname color has been set to: " + color + '</i>'));
     });
 
     socket.on('nickname set', function (newNick) {

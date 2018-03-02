@@ -7,9 +7,9 @@ let io = require('socket.io')(http); // new instance of io by passing http (http
 let path = require("path");
 
 let timeStamp;
-let chatLog = [];
 let usersOnline = 0;
 let usersList = [];
+let chatLog = [];
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -20,41 +20,39 @@ app.get('/', function(req, res){
 
 // Listen for on the connection event for incoming sockets, log to console
 io.on('connection', function(socket){
-
-    let color = getRandomColor()
+	let color = getRandomColor();
     console.log('a user connected');
 
-    socket.emit('new user xD');
-
-
-
+	socket.emit('new user xD');
+	
     socket.on('new user', function() {
         usersOnline++;
         //let color = getRandomColor();
+        console.log("starting color is: " + color);
         let nickname = "User" + usersOnline;
         socket.color = color;
         socket.name = nickname;
         usersList.push({nickname: nickname, color: color});
-        //socket.emit('new user', nickname);
         socket.emit('chat history', chatLog);
         socket.emit('announce', nickname);
         socket.broadcast.emit('announce', nickname);
-        socket.emit('new user cookie', nickname, color);
+        //socket.emit('new user', nickname);
+		socket.emit('new user cookie', nickname, color)
         io.emit('new userlist', usersList);
     });
-
-    socket.on('new cookie', function(nickname){
-        //let color = getRandomColor()
-        console.log('COOKIE :D')
-        socket.name = nickname
-        socket.color = color
+	
+	socket.on('new cookie', function(nickname){
+        userOnline = usersList.length
+		//let color = getRandomColor()
+		console.log('COOKIE :D')
+		socket.name = nickname
+		socket.color = color
         usersList.push({nickname: nickname, color: color})
         socket.emit('chat history', chatLog);
-        socket.emit('announce', nickname);
+		socket.emit('announce', nickname);
         socket.broadcast.emit('announce', nickname);
-        io.emit('new userlist', usersList)
-    })
-
+		io.emit('new userlist', usersList)
+	})
 
     // User disconnects
     socket.on('disconnect', function(){
@@ -95,7 +93,7 @@ io.on('connection', function(socket){
             if (taken) {
                 socket.emit('nickname taken', socket.name);
                 socket.name = oldUsername;
-                console.log("Name taken");
+                console.log("Name taken sry");
             } else {
                 console.log("Name set successful");
                 for (let i = 0; i < usersList.length; i++) {
@@ -105,9 +103,8 @@ io.on('connection', function(socket){
                 }
                 io.emit('new userlist', usersList);
                 socket.broadcast.emit('nickname set other', oldUsername, socket.name);
-                /*socket.emit('nickname cookie', socket.name);*/
-                socket.emit('new cookie name', socket.name);
-                socket.emit('new name', socket.name);
+                socket.emit('new cookie name', socket.name)
+                socket.emit('new name', socket.name)
                 socket.emit('nickname set', socket.name);
             }
         } else if (msg.startsWith("/nickcolor ")) {
@@ -123,7 +120,6 @@ io.on('connection', function(socket){
         } else {
             socket.broadcast.emit('chat message', timing, socket.color, socket.name, msg);
             socket.emit('bold chat message', timing, socket.color, socket.name, msg);
-
             if(chatLog.length >= 200){
                 chatLog.shift();
             } else {
