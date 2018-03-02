@@ -8,31 +8,38 @@ function onLoad() {
     console.log("hello");
     let socket = io();
 
-    /*
-    // document.cookie = the user's username
-    socket.on('user cookie', function(username) {
-        if(document.cookie) {
-            socket.emit('cookie user', document.cookie);
-            socket.name = document.cookie;
-            console.log("cookie exists");
-        } else {
-            socket.name = username;
-            document.cookie = socket.name;
-            console.log("cookie created");
-        }
-    });
-
-    socket.on('nickname cookie', function(username) {
-       if(document.cookie){
-           document.cookie = username;
-       }
-    });
-    */
-
     $('form').submit(function () {
         socket.emit('chat message', $('#user-msg').val());
         $('#user-msg').val('');
         return false;
+    });
+
+    socket.on('new user xD', function(username){
+        if(document.cookie){
+            socket.emit('new cookie', document.cookie)
+            $('#user-name').text("* You are " + document.cookie);
+            $('#user-list').append($('<li>').text(document.cookie));
+        }else{
+            socket.emit('new user')
+        }
+    });
+
+    socket.on('new user cookie', function(username){
+        document.cookie = username;
+        $('#user-name').text("* You are " + username);
+        $('#user-list').append($('<li>').text(username));
+    });
+
+    socket.on('new name', function(username){
+        $('#user-name').text("* You are " + username);
+        $('#user-list').append($('<li>').text(username));
+    })
+
+    socket.on('new cookie name', function(newName, color){
+        if(document.cookie){
+            document.cookie = newName;
+            document.cookie = color;
+        }
     });
 
 

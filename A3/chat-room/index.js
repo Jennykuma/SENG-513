@@ -20,45 +20,40 @@ app.get('/', function(req, res){
 
 // Listen for on the connection event for incoming sockets, log to console
 io.on('connection', function(socket){
+
+    let color = getRandomColor()
     console.log('a user connected');
 
-    /*
-    usersOnline++;
-    let color = getRandomColor();
-    let nickname = "User" + usersOnline;
-    socket.color = color;
-    socket.name = nickname;
+    socket.emit('new user xD');
 
-    socket.emit('user cookie', socket.name);
 
-    usersList.push({nickname: nickname, color: color});
-    socket.emit('announce', nickname);
-    socket.broadcast.emit('announce', nickname);
-    socket.emit('new user', nickname);
-    io.emit('new userlist', usersList);
-
-    socket.on('cookie user', function(nickname) {
-        usersList.splice(usersList.indexOf(socket.name), 1);
-        socket.name = nickname;
-        usersList.push({nickname: socket.name, color: socket.color});
-        socket.emit('new user', nickname);
-        io.emit('new userlist', usersList);
-    });
-    */
 
     socket.on('new user', function() {
         usersOnline++;
-        let color = getRandomColor();
+        //let color = getRandomColor();
         let nickname = "User" + usersOnline;
         socket.color = color;
         socket.name = nickname;
         usersList.push({nickname: nickname, color: color});
-        socket.emit('new user', nickname);
+        //socket.emit('new user', nickname);
         socket.emit('chat history', chatLog);
         socket.emit('announce', nickname);
         socket.broadcast.emit('announce', nickname);
+        socket.emit('new user cookie', nickname, color);
         io.emit('new userlist', usersList);
     });
+
+    socket.on('new cookie', function(nickname){
+        //let color = getRandomColor()
+        console.log('COOKIE :D')
+        socket.name = nickname
+        socket.color = color
+        usersList.push({nickname: nickname, color: color})
+        socket.emit('chat history', chatLog);
+        socket.emit('announce', nickname);
+        socket.broadcast.emit('announce', nickname);
+        io.emit('new userlist', usersList)
+    })
 
 
     // User disconnects
@@ -111,6 +106,8 @@ io.on('connection', function(socket){
                 io.emit('new userlist', usersList);
                 socket.broadcast.emit('nickname set other', oldUsername, socket.name);
                 /*socket.emit('nickname cookie', socket.name);*/
+                socket.emit('new cookie name', socket.name);
+                socket.emit('new name', socket.name);
                 socket.emit('nickname set', socket.name);
             }
         } else if (msg.startsWith("/nickcolor ")) {
