@@ -3,6 +3,7 @@
  */
 let socket;
 let username;
+let chatLog = $('#chat-messages');
 
 $(document).ready(onLoad());
 
@@ -64,6 +65,8 @@ function onLoad() {
             $('#chat-messages').append($('<li>').html('<span style="color:#' + chatLog[i].color + '">'
             + chatLog[i].user + ': </span>' + chatLog[i].msg));
         }
+
+        $('.chat-container').animate({scrollTop: $('.chat-container').prop("scrollHeight")}, 500);
      });
 
     socket.on('announce', function (username) {
@@ -74,14 +77,45 @@ function onLoad() {
         $('#chat-messages').append($('<li>').text(oldUsername + " has disconnected"));
     });
 
-    socket.on('chat message', function (timing, color, username, msg) {
+    socket.on('chat message', function (timing, color, username, msg, chatFull) {
+        if(chatFull){
+            //$('#chat-messages').first().remove();
+            var elem = document.querySelectorAll('#chat-messages li')
+            for(var i=0; li=elem[i]; i--) {
+                li.parentNode.removeChild(li);
+            }
+        }
+
         $('#chat-messages').append($('<li>').html(timing + " - " + '<span style="color:' + color + '">'
             + username + ': </span>' + msg));
+
+        $('.chat-container').animate({scrollTop: $('.chat-container').prop("scrollHeight")}, 500);
+
+        /*
+        $(".chat-msg-holder").stop().animate({
+            scrollTop: $last.offset().top
+        }, '500', 'swing', function() {});*/
+
     });
 
-    socket.on('bold chat message', function (timing, color, username, msg) {
+    socket.on('bold chat message', function (timing, color, username, msg, chatFull) {
+        if(chatFull){
+            //$('#chat-messages').first().remove();
+            var elem = document.querySelectorAll('#chat-messages li')
+            for(var i=0; li=elem[i]; i--) {
+                li.parentNode.removeChild(li);
+            }
+        }
+
         $('#chat-messages').append($('<li>').html(timing + " - " + '<b><span style="color:#' + color +
             '">' + username + ': </span>' + msg + '</b>'));
+
+        $('.chat-container').animate({scrollTop: $('.chat-container').prop("scrollHeight")}, 500);
+
+        /*
+        $(".chat-msg-holder").stop().animate({
+            scrollTop: $last.offset().top
+        }, '500', 'swing', function() {});*/
     });
 
     socket.on('color set', function (color) {

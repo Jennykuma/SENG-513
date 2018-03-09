@@ -10,6 +10,7 @@ let timeStamp;
 let usersOnline = 0;
 let usersList = [];
 let chatLog = [];
+let chatFull = false;
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -75,6 +76,7 @@ io.on('connection', function(socket){
     });
 
     socket.on('chat message', function(msg){
+
         timeStamp = new Date();
         let hour = timeStamp.getHours();
         let min = (timeStamp.getMinutes()<10 ? '0' : '') + timeStamp.getMinutes();
@@ -118,13 +120,25 @@ io.on('connection', function(socket){
             io.emit('new userlist', usersList);
             socket.emit('color set', socket.color);
         } else {
-            socket.broadcast.emit('chat message', timing, socket.color, socket.name, msg);
-            socket.emit('bold chat message', timing, socket.color, socket.name, msg);
-            if(chatLog.length >= 200){
-                chatLog.shift();
-            } else {
-                chatLog.push({user: socket.name, color: socket.color, msg: msg});
+
+            // Check for tags and then if found, remove and save msg without tags
+            let regex = /<[^>]*>/g;
+            if (regex.test(msg)) {
+                console.log("THIS  IS AN HTML / JS INJECTION! FIXED!");
+                msg = msg.replace(regex, "");
             }
+
+            if(chatLog.length === 200){
+                chatLog.shift();
+                chatFull = true;
+            }
+
+            chatLog.push({user: socket.name, color: socket.color, msg: msg});
+            console.log("MSG PUSHED!");
+            console.log("ChatLog length: " + chatLog.length);
+
+            socket.broadcast.emit('chat message', timing, socket.color, socket.name, msg, chatFull);
+            socket.emit('bold chat message', timing, socket.color, socket.name, msg, chatFull);
         }
 
         //io.emit('chat message', msg); // send msg to everyone on the server
