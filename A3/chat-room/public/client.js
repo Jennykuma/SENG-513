@@ -16,10 +16,6 @@ function onLoad() {
         $('#user-msg').val('');
         return false;
     });
-
-    /*socket.on('connect', function () {
-        socket.emit('new user');
-    });*/
 	
 	socket.on('new user xD', function(username){
 		if(document.cookie){
@@ -46,11 +42,6 @@ function onLoad() {
 			document.cookie = newName
 		}
 	})
-
-    /*socket.on('new user', function (username) {
-        $('#user-name').text("* You are " + username);
-        $('#user-list').append($('<li>').text(username));
-    });*/
 
     socket.on('new userlist', function (usersList) {
         $('#user-list').text("");
@@ -91,11 +82,6 @@ function onLoad() {
 
         $('.chat-container').animate({scrollTop: $('.chat-container').prop("scrollHeight")}, 500);
 
-        /*
-        $(".chat-msg-holder").stop().animate({
-            scrollTop: $last.offset().top
-        }, '500', 'swing', function() {});*/
-
     });
 
     socket.on('bold chat message', function (timing, color, username, msg, chatFull) {
@@ -112,10 +98,6 @@ function onLoad() {
 
         $('.chat-container').animate({scrollTop: $('.chat-container').prop("scrollHeight")}, 500);
 
-        /*
-        $(".chat-msg-holder").stop().animate({
-            scrollTop: $last.offset().top
-        }, '500', 'swing', function() {});*/
     });
 
     socket.on('color set', function (color) {
